@@ -1,0 +1,25 @@
+[package]
+name = "rust-stm32"
+version = "0.1.0"
+authors = ["Nathan Henrie <nate@n8henrie.com>"]
+edition = "2018"
+
+[profile.release]
+# optimize for size ('z' would optimize even more)
+opt-level = 's'
+# link with link time optimization (lto).
+lto = true
+# enable debugging in release mode.
+debug = true
+
+[dependencies]
+# Gives us access to the STM32F1 registers
+stm32f1 = {version = "0.6.0", features = ["stm32f103", "rt"]}
+# provides startup code for the ARM CPU
+cortex-m-rt = "0.6.7"
+# provides access to low level ARM CPU registers (used for delay)
+cortex-m = "0.5.8"
+# provies a panic-handler (halting cpu)
+# (required when not using stdlib)
+panic-halt = "0.2.0"
+
