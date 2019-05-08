@@ -3,6 +3,6 @@
 target = "thumbv7m-none-eabi"
 
 rustflags = [
-  # use the Tlink.x scrip from the cortex-m-rt crate
+  # use the Tlink.x script from the cortex-m-rt crate
   "-C", "link-arg=-Tlink.x",
 ]
